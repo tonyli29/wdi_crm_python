@@ -43,11 +43,16 @@ class CRM:
       print('Enter note')
       note = input()
 
-      Contact.create(first_name, last_name, email, note)
+      contact = Contact.create(
+      first_name=first_name,
+      last_name=last_name,
+      email=email,
+      note=note
+      )
 
   def modify_existing_contact(self):
       print('Who would you like to edit?')
-      contact_list = Contact.contacts
+      contact_list = Contact
       for idx, contact in enumerate(contact_list):
           print(f"[{idx}] {contact.first_name}")
           # need to add a way to keep repeating this so we dont have to go back to main menu everytime
@@ -62,7 +67,7 @@ class CRM:
       print('[3] note')
       request_change = int(input())
       if request_change == 0:
-          print("What would you like to change {} {}'s name to?'".format(contact_list[request].first_name, contact_list[request].last_name))
+          print("What would you like to change {}'s name to?'".format(contact_list[request].first_name, contact_list[request].last_name))
           changed = input()
           contact_list[request].first_name = changed
       elif request_change == 1:
@@ -81,7 +86,7 @@ class CRM:
           print("Please enter a valid number")
 
   def delete_contact(self):
-      contact_list = Contact.contacts
+      contact_list = Contact
       print('Who would you like to remove?')
       for idx, contact in enumerate(contact_list):
           print(f"[{idx}] {contact.first_name}")
@@ -91,7 +96,7 @@ class CRM:
 
 
   def display_all_contacts(self):
-      contact_list = Contact.contacts
+      contact_list = Contact
       for people in contact_list:
           print(people.first_name + ' ' + people.last_name + '    ' + people.email + '    ' + people.note)
 

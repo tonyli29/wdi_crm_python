@@ -65,9 +65,7 @@
 #
 #   # Feel free to add other methods here, if you need them.
 #
-# contact1 = Contact.create('Tony', 'Li', 'litony1999@gmail.com', 'note')
-# contact2 = Contact.create('Pham', 'Geh', 'Pham1345@gmail.com', 'sup fam')
-# contact3 = Contact.create('Bill', 'Lee', 'Billy1989@gmail.com', 'hello it is me')
+
 # Contact.create('h', 'l', '@gm', "leettter")
 #
 # print(len(Contact.contacts))
@@ -93,13 +91,10 @@ class Contact(Model):
 
 db.connect()
 db.create_tables([Contact])
-
-
-
-
-
-
-
+contact_1 = Contact.create(first_name='Tony', last_name='Li', email='litony1999@gmail.com', note='note')
+contact_2 = Contact.create(first_name='Pham', last_name='Geh', email='Pham1345@gmail.com', note='sup fam')
+contact_3 = Contact.create(first_name='Bill', last_name='Lee', email='Billy1989@gmail.com',note='hello it is me')
+contact_4 = Contact.create(first_name='Betty', last_name='Maker', email='bettymakes@bitmaker.co', note='this is a note')
 
 
 
